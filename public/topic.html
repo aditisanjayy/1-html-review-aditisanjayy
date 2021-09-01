@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>D&S HW 1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      D&S HW 1- Aditi Sanjay
+    </header>
+    
+    <nav>
+        <a href="index.html">Page 1</a> | 
+        <a href="tableofbooks.html">Page 2</a> | 
+        <a href="topic.html">Page 3</a>
+    </nav>
+<center>
+<h3><b>Hiking</b></h3>
+<blockquote class="blockquote text-center">
+  <p class="mb-0">To walk in nature is to witness a thousand miracles.</p>
+  <footer class="blockquote-footer">Marie Davis</footer>
+</blockquote>
+</center>
+
+<div>
+  <center>
+  <button onclick="plusDivs(-1)">&#10094;</button>
+  <button onclick="plusDivs(1)">&#10095;</button>
+  <a target="_blank" href="images/img1.jpg">
+  <img class="Slides" src="images/img1.jpg" style="width:150px;height:100px;"></a>
+  <a target="_blank" href="images/img2.jpg">
+  <img class="Slides" src="images/img2.jpg" style="width:150px;height:100px;"></a>
+  <a target="_blank" href="images/img1.jpg">
+  <img class="Slides" src="images/img1.jpg" style="width:150px;height:100px;"></a>
+  <a target="_blank" href="images/img3.jpg">
+  <img class="Slides" src="images/img3.jpg" style="width:150px;height:100px;"></a>
+  <br>
+  <h6>Click on the thumbnail to open a larger view</h6>
+  <h6>Image Sources-</h6>
+  <h6><a href="https://unsplash.com/s/photos/hiking">Image 1</a>
+  <a href="https://www.marthastewart.com/7973725/best-hiking-trails-united-states"> Image 2
+   <a href="https://wildlandtrekking.com/blog/10-reasons-to-start-hiking/"> Image 3</a></h6>
+
+   </center>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("Slides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+  </body>
+</html>
