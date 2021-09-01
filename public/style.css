@@ -1,0 +1,25 @@
+header {
+    background-color: #76ADEC;
+    color: white;
+    padding: 8px;
+    font-size:  15px;
+    font-weight: bold;
+    width: 100%;
+  }
+  thead{
+    background-color: #57636b;
+    color: white
+  }
+  tfoot{
+    background-color: #262729;
+    color: white;
+    text-align: center;
+  }
+  #formdiv{
+    width:60%;
+  }
+  //for Page 3//
+  .Slides {display:none;}
+  //page 3 end//
+  
+  
