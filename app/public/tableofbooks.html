@@ -8,7 +8,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    
   </head>
   <body>
     <header>
@@ -22,7 +23,7 @@
     </nav>
 <center>
 <h3><b>Books to Read</b></h3>
-    <table class="table table-bordered table-striped ">
+    <table class="table table-bordered table-striped " id="table-id">
       <thead>
        <tr>
        <th class="text-center">Title </th>
@@ -132,5 +133,9 @@
 </form><br><br>
 </div>
 </center>
+<script src='js/tablesort.min.js'></script>
+<script>
+  new Tablesort(document.getElementById('table-id'));
+</script>
   </body>
 </html>
