@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>D&S HW 1</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -15,31 +16,43 @@
       D&S HW 1- Aditi Sanjay
     </header>
     
-    <nav>
-        <a href="index.html">Page 1</a> | 
-        <a href="tableofbooks.html">Page 2</a> | 
-        <a href="topic.html">Page 3</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">User Profile<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tableofbooks.html">Books and more</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="topic.html">Hiking</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-<center>
-<h3><b>Hiking</b></h3>
+
+<div id="lala3">
+<h3>Hiking</h3>
 <blockquote class="blockquote text-center">
-  <p class="mb-0">To walk in nature is to witness a thousand miracles.</p>
+  <p class="mb-0">To walk in nature is to witness a thousand miracles.</p><br>
   <footer class="blockquote-footer">Marie Davis</footer>
 </blockquote>
-</center>
 
 <div>
-  <center>
   <button onclick="plusDivs(-1)">&#10094;</button>
   <button onclick="plusDivs(1)">&#10095;</button>
   <a target="_blank" href="images/img1.jpg">
-  <img class="Slides" src="images/img1.jpg" style="width:150px;height:100px;"></a>
+  <img class="Slides" src="images/img1.jpg" id="top1"></a>
   <a target="_blank" href="images/img2.jpg">
-  <img class="Slides" src="images/img2.jpg" style="width:150px;height:100px;"></a>
+  <img class="Slides" src="images/img2.jpg" id="top2"></a>
   <a target="_blank" href="images/img1.jpg">
-  <img class="Slides" src="images/img1.jpg" style="width:150px;height:100px;"></a>
+  <img class="Slides" src="images/img1.jpg" id="top3"></a>
   <a target="_blank" href="images/img3.jpg">
-  <img class="Slides" src="images/img3.jpg" style="width:150px;height:100px;"></a>
+  <img class="Slides" src="images/img3.jpg" id="top4"></a>
   <br>
   <h6>Click on the thumbnail to open a larger view</h6>
   <h6>Image Sources-</h6>
@@ -47,9 +60,8 @@
   <a href="https://www.marthastewart.com/7973725/best-hiking-trails-united-states"> Image 2
    <a href="https://wildlandtrekking.com/blog/10-reasons-to-start-hiking/"> Image 3</a></h6>
 
-   </center>
 </div>
-
+</div>
 <script>
 var slideIndex = 1;
 showDivs(slideIndex);

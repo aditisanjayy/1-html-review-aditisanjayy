@@ -6,6 +6,41 @@ header {
     font-weight: bold;
     width: 100%;
   }
+  #lala1{
+    text-align: center;
+  }
+  #lala2{
+    text-align: center;
+  }
+  #lala3{
+    text-align: center;
+  }
+  #lala4{
+    margin-left: 3%;
+  }
+  #top1{
+    width:150px;
+    height:100px;
+    margin-left: 43.5%;
+  }
+  #top2{
+    width:150px;
+    height:100px;
+    margin-left: 43.5%;
+  }
+  #top3{
+    width:150px;
+    height:100px;
+    margin-left: 43.5%;
+  }
+  #top4{
+    width:150px;
+    height:100px;
+    margin-left: 43.5%;
+  }
+  #bla1{
+    text-align: left;
+  }
   #formdiv{
     width:60%;
   }

@@ -4,34 +4,56 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>D&S HW 1</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- Adding Vue js script tag-->
+    <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
     <header>
       D&S HW 1- Aditi Sanjay
     </header>
     
-    <nav>
-        <a href="index.html">Page 1</a> | 
-        <a href="tableofbooks.html">Page 2</a> | 
-        <a href="topic.html">Page 3</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">User Profile<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tableofbooks.html">Books and more</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="topic.html">Hiking</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
-<center><br><br>
+<div id="lala1">
+<br>
+<div id="app">
   <h2>Welcome back!</h2><br>
-  <img src="images/D&SHW1fakepic.jpg" alt="Girl Photo" width="120" height="140">
-  <h1>Addison Simmmons</h1>
-  <h5>Address- 6470 Karen Dr, USA</h5>
-  <h5>Birthdate- 8/3/1987</h5>
-  <h5>Age- 34 years</h5>
-  <h5>Email- 
-    <a href="mailto:addison.simmmons@example.com"> addison.simmmons@example.com</a></h5>
-  
-</center>
-    <script src="script.js"></script>
+  <a v-bind:href = "person.picture.thumbnail"><img v-bind:src="person.picture.thumbnail" alt="Photo" width="100" height="120"></a>
+  <h1>Name: {{person.name.first}} {{person.name.last}}</h1>
+  <h5>Address: {{person.location.city}}, {{person.location.country}}</h5>
+  <h5>Birthdate: {{person.dob.date[0]+person.dob.date[1]+person.dob.date[2]+person.dob.date[3]+person.dob.date[4]+person.dob.date[5]+person.dob.date[6]+person.dob.date[7]+person.dob.date[8]+person.dob.date[9]}}</h5>
+  <h5>Age: {{person.dob.age}} years</h5>
+  <h5>Email: 
+    <a v-bind:href="'mailto:'+ person.email">{{person.email }}</a></h5>
+</div>
+</div>
+<script src="./js/index.js"></script>
+<!-- Mount App for linking the js script -->
+<script>
+  const mountedApp = app.mount('#app')
+</script>
   </body>
 </html>
