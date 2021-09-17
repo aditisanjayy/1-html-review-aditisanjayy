@@ -41,7 +41,7 @@
 <br>
 <div id="app">
   <h2>Welcome back!</h2><br>
-  <a v-bind:href = "person.picture.thumbnail"><img v-bind:src="person.picture.thumbnail" alt="Photo" width="100" height="120"></a>
+  <a v-bind:href = "person.picture.thumbnail" target="_blank"><img v-bind:src="person.picture.thumbnail" alt="Photo" width="100" height="120"></a>
   <h1>Name: {{person.name.first}} {{person.name.last}}</h1>
   <h5>Address: {{person.location.city}}, {{person.location.country}}</h5>
   <h5>Birthdate: {{person.dob.date[0]+person.dob.date[1]+person.dob.date[2]+person.dob.date[3]+person.dob.date[4]+person.dob.date[5]+person.dob.date[6]+person.dob.date[7]+person.dob.date[8]+person.dob.date[9]}}</h5>
