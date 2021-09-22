@@ -14,8 +14,8 @@ const app=Vue.createApp({
                        
                    },
                    {
-                       "name": "Ann",
-                       "country":"India",
+                       "name": "Annn",
+                       "country":"UK",
                        "birthday":"09 March",
                        "age":"26",
                        "email":"ann@example.com",
@@ -33,7 +33,6 @@ const app=Vue.createApp({
        },
        methods:{
            fetchUserData(){
-
                console.log("A")
                fetch('https://randomuser.me/api/')
                .then(response => response.json())
