@@ -40,6 +40,9 @@
 <div id="lala1">
 <br>
 <div id="app">
+  <form v-on:submit.prevent="fetchUserData">
+    <button class="button"  type="submit">Refresh</button>
+  </form>
   <h2>Welcome back!</h2><br>
   <a v-bind:href = "person.picture.thumbnail" target="_blank"><img v-bind:src="person.picture.thumbnail" alt="Photo" width="100" height="120"></a>
   <h1>Name: {{person.name.first}} {{person.name.last}}</h1>
@@ -49,9 +52,6 @@
   <h5>Email: 
     <a v-bind:href="'mailto:'+ person.email">{{person.email }}</a></h5>
 </div>
-<form v-on:submit.prevent="fetchUserData">
-  <button class="button"  type="submit">Refresh</button>
-</form>
 </div>
 <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>    
 <script src="./js/index.js"></script>
