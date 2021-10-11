@@ -10,7 +10,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
   </head>
   <body>
     <header>
@@ -37,88 +38,35 @@
     </nav>
 
 <br>
-<div id="lala2">
-<h3><b>Books to Read</b></h3>
-    <table class="table table-bordered table-striped " id="table-id">
-      <thead>
-       <tr>
-       <th class="text-center">Title </th>
-       <th class="text-center">Author(s)</th>
-       <th class="text-center">Year Published</th>
-       <th class="text-center">Publisher</th>
-       <th class="text-center">Page Count</th>
-       <th class="text-center">MSRP($)</th>
-       </tr></thead>
-
-      <tr>
-        <td>American Marxism</td>
-        <td>Mark R. Levin	</td>
-        <td>2021</td>
-        <td>Threshold Editions</td>
-        <td>304</td>
-        <td>28</td>
-      </tr>
-      <tr>
-        <td>Greenlights</td>
-        <td>Matthew McConaughey	</td>
-        <td>2020</td>
-        <td>Crown Publishing Group (NY)</td>
-        <td>304</td>
-        <td>30</td>
-      </tr>
-      <tr>
-        <td>Make It Nice</td>
-        <td>Dorinda Medley</td>
-        <td>2021</td>
-        <td>Gallery Books</td>
-        <td>288</td>
-        <td>28</td>
-      </tr>
-      <tr>
-        <td>How I Saved the World</td>
-        <td>Jesse Watters</td>
-        <td>2021</td>
-        <td>Broadside Books</td>
-        <td>320</td>
-        <td>27</td>
-      </tr>
-      <tr>
-        <td>The Premonition: A Pandemic Story</td>
-        <td>Michael Lewis</td>
-        <td>2021</td>
-        <td>W. W. Norton & Company</td>
-        <td>320</td>
-        <td>30</td>
-      </tr>
-      <tr>
-        <td>Bloodless</td>
-        <td>Douglas Preston, Lincoln Child</td>
-        <td>2021</td>
-        <td>Grand Central Publishing</td>
-        <td>368</td>
-        <td>29</td>
-      </tr>
-      <tr>
-        <td>Billy Summers</td>
-        <td>Stephen King</td>
-        <td>2021</td>
-        <td>Scribner Book Company</td>
-        <td>528</td>
-        <td>30</td>
-      </tr>
-      <tr>
-        <td>Complications</td>
-        <td>Danielle Steel</td>
-        <td>2021</td>
-        <td>Delacorte Press</td>
-        <td>256</td>
-        <td>29</td>
-      </tr>
-       <tfoot>
-       <tr><td colspan="6">Must Read Books for you</td></tr>
-       </tfoot>
-    </table><br>
-    </div>  
+<div id="anotherApp" class="container">
+      <table  class="table table-bordered table-striped " id="table-id">
+        <thead>
+          <tr>
+            <tr>
+              <th class="text-center">ID </th>
+              <th class="text-center">Title </th>
+              <th class="text-center">Author(s)</th>
+              <th class="text-center">Year Published</th>
+              <th class="text-center">Publisher</th>
+              <th class="text-center">Page Count</th>
+              <th class="text-center">MSRP($)</th>
+              </tr>
+          </tr>
+        </thead>
+          <tbody>
+              <tr v-for="book in books">
+                  <td>{{ book.id }}</td>
+                  <td>{{ book.title }}</td>
+                  <td>{{ book.author }}</td>
+                  <td>{{ book.year_published }}</td>
+                  <td>{{ book.publisher }}</td>
+                  <td>{{ book.page_count }}</td>
+                  <td>{{ prettyDollar(book.msrp)}}</td>
+              </tr>
+          </tbody>
+      </table>
+</div>
+</div>
     <div id="lala4">
     <h3 id="bla1">Add a Book</h3>
     <div id="formdiv">
@@ -151,7 +99,10 @@
 </form><br><br>
 </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 <script src='js/tablesort.min.js'></script>
+<script src='js/index.js'></script>
 <script>
   new Tablesort(document.getElementById('table-id'));
 </script>
