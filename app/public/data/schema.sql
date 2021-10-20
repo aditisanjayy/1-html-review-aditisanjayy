@@ -4,7 +4,7 @@ USE msisdb;
 DROP TABLE IF EXISTS books;
 CREATE TABLE books (
     id int PRIMARY KEY AUTO_INCREMENT ,
-    title varchar(48) UNIQUE NOT NULL,
+    title varchar(48) NOT NULL,
     author varchar(24),
     year_published int,
     publisher varchar(24),
