@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>D&S HW 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <header>
+      D&S HW 1- Aditi Sanjay
+    </header>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">User Profile<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tableofbooks.html">Books and more</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="topic.html">Hiking</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<br>
+<div id="anotherApp" class="container">
+      <table  class="table table-bordered table-striped " id="table-id">
+        <thead>
+          <tr>
+            <tr>
+              <th class="text-center">ID </th>
+              <th class="text-center">Title </th>
+              <th class="text-center">Author(s)</th>
+              <th class="text-center">Year Published</th>
+              <th class="text-center">Publisher</th>
+              <th class="text-center">Page Count</th>
+              <th class="text-center">MSRP($)</th>
+              </tr>
+          </tr>
+        </thead>
+          <tbody>
+              <tr v-for="book in books">
+                  <td>{{ book.id }}</td>
+                  <td>{{ book.title }}</td>
+                  <td>{{ book.author }}</td>
+                  <td>{{ book.year_published }}</td>
+                  <td>{{ book.publisher }}</td>
+                  <td>{{ book.page_count }}</td>
+                  <td>{{ prettyDollar(book.msrp)}}</td>
+              </tr>
+          </tbody>
+      </table>
+      <!-- <h3>{{ selectedOffer === null ? "Add " : "Edit " }} Book</h3> -->
+      <form v-on:submit.prevent="postNewOffer">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" v-model="offerForm.title" id="title" placeholder="Enter Title">
+  </div>
+  <div class="form-group">
+    <label for="author">Author(s)</label>
+    <input type="text" class="form-control" v-model="offerForm.author" id="author" placeholder="Enter Author(s) Name">
+  </div>
+  <div class="form-group">
+    <label for="year_published">Year Published</label>
+    <input type="number" class="form-control" id="year_published" v-model="offerForm.year_published" placeholder="Enter Published Year">
+  </div>
+  <div class="form-group">
+    <label for="publisher">Publisher</label>
+    <input type="text" class="form-control" id="publisher" v-model="offerForm.publisher" placeholder="Enter Publisher Name">
+  </div>
+  <div class="form-group">
+    <label for="page_count">Page Count</label>
+    <input type="number" class="form-control" id="page_count" v-model="offerForm.page_count" placeholder="Enter Page Count">
+  </div>
+  <div class="form-group">
+    <label for="msrp">Price in $</label>
+    <input type="number" class="form-control" id="msrp" v-model="offerForm.msrp" placeholder="Enter Price">
+  </div><br>
+  <input type="submit" value="Submit">
+  <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+  <!-- <button type="submit" class="btn btn-primary">{{ selectedOffer === null ? "Add " : "Edit " }} Book</button>
+  <button type="button" class="btn btn-outline-secondary" 
+     v-if="selectedOffer"
+     v-on:click="handleResetEdit">Cancel Edit</button> -->
+</form><br><br>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+<script src='js/tablesort.min.js'></script>
+<script src='js/index.js'></script>
+<script>
+  new Tablesort(document.getElementById('table-id'));
+</script>
+  </body>
+</html>
